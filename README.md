@@ -11,6 +11,74 @@ Genetic Algorithm (GA). The GA operates over a population of bots, evolving and 
 - [ ] Create a mechanism to generate offspring bots to fill the population for the next generation.
 - [ ] Incorporate a mutation step to introduce small random changes to the genetic makeup of bots.
 
+## Project File Structure (Example)
+```text
+.
+├── Game.jar
+├── optimizer.iml
+├── out
+│   └── production
+│       └── optimizer
+│           ├── GameManager.class
+│           ├── GameResult.class
+│           ├── GeneticAlgorithm.class
+│           ├── Main.class
+│           ├── Player.class
+│           └── Stats.class
+├── Player1
+│   ├── ActivationFunction.class
+│   ├── Igralec.log
+│   ├── Layer.class
+│   ├── MatrixUtils.class
+│   ├── NeuralNetwork.class
+│   ├── Planet.class
+│   ├── PlanetManager.class
+│   ├── Player.class
+│   └── SigmoidActivation.class
+├── Player2
+│   ├── ActivationFunction.class
+│   ├── Igralec.log
+│   ├── Layer.class
+│   ├── MatrixUtils.class
+│   ├── NeuralNetwork.class
+│   ├── Planet.class
+│   ├── PlanetManager.class
+│   ├── Player.class
+│   └── SigmoidActivation.class
+├── Player3
+│   ├── ActivationFunction.class
+│   ├── Igralec.log
+│   ├── Layer.class
+│   ├── MatrixUtils.class
+│   ├── NeuralNetwork.class
+│   ├── Planet.class
+│   ├── PlanetManager.class
+│   ├── Player.class
+│   └── SigmoidActivation.class
+├── Player4
+│   ├── ActivationFunction.class
+│   ├── Igralec.log
+│   ├── Layer.class
+│   ├── MatrixUtils.class
+│   ├── NeuralNetwork.class
+│   ├── Planet.class
+│   ├── PlanetManager.class
+│   ├── Player.class
+│   └── SigmoidActivation.class
+├── README.md
+├── scripts
+│   └── copy.sh
+└── src
+    ├── GameManager.java
+    ├── GameResult.java
+    ├── GeneticAlgorithm.java
+    ├── Main.java
+    ├── Player.java
+    └── Stats.java
+
+```
+
+
 ## Execution Cycle
 1. Parse the performance of the bot after each game.
 2. Calculate fitness for each bot in the population.
