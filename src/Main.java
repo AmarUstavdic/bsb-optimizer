@@ -99,9 +99,11 @@ public class Main {
             }
 
 
-
-
             // then we need to calculate fitness of each player based on previous stats
+            for (Player p : population) {
+                p.calculateFitness();
+            }
+
 
             // then we perform selection of parents
             Player[] parents = geneticAlgorithm.selectParents(population);
