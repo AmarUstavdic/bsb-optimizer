@@ -104,7 +104,6 @@ public class Main {
                 p.calculateFitness();
             }
 
-
             // then we perform selection of parents
             Player[] parents = geneticAlgorithm.selectParents(population);
 

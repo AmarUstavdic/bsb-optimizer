@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Random;
+
 public class GeneticAlgorithm {
 
     private int populationSize;
@@ -23,16 +26,20 @@ public class GeneticAlgorithm {
 
 
     public Player[] selectParents(Player[] population) {
-
-
-        return null;
+        Arrays.sort(population, (a, b) -> Double.compare(b.getFitness(), a.getFitness()));
+        return Arrays.copyOfRange(population, 0, populationSize / 2);
     }
 
 
     public Player[] crossover(Player[] parents) {
-
-
-        return null;
+        Player[] offspring = new Player[populationSize - parents.length];
+        Random random = new Random();
+        for (int i = 0; i < offspring.length; i++) {
+            Player parent1 = parents[random.nextInt(parents.length)];
+            Player parent2 = parents[random.nextInt(parents.length)];
+            offspring[i] = crossoverIndividuals(parent1, parent2);
+        }
+        return offspring;
     }
 
 

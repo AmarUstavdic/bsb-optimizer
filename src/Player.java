@@ -38,6 +38,10 @@ public class Player {
         fitness += stats.getPlanetsConquered();
     }
 
+    public double getFitness() {
+        return fitness;
+    }
+
     public Stats getStats() {
         return stats;
     }
