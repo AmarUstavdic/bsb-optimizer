@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Player {
 
     private final Stats stats;
-    private double[] genes;
+    private final double[] genes;
     private double fitness;
 
     public Player(double[] genes) {
@@ -30,6 +30,12 @@ public class Player {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void calculateFitness() {
+        fitness += (double) stats.getTotalTroopsGenerated() / stats.getTurnsPlayed();
+        fitness += (stats.isSurvive() ? 1 : 0.0);
+        fitness += stats.getPlanetsConquered();
     }
 
     public Stats getStats() {
