@@ -15,7 +15,7 @@ public class GeneticAlgorithm {
             for (int j = 0; j < genesLength; j++) {
                 genes[j] = Math.random() * 4 - 2;
             }
-            population[i] = new Player(genes, null);
+            population[i] = new Player(genes);
         }
         return population;
     }

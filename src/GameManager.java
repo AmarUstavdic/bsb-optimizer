@@ -12,7 +12,7 @@ public class GameManager {
 
     public ArrayList<String> runGames(int n, Player[] population) {
 
-        String[] command = {"java", "-jar", "Game.jar", "-gui=true", "Player1", "Player2", "Player3", "Player4"};
+        String[] command = {"java", "-jar", "Game.jar", "-gui=false", "Player1", "Player2", "Player3", "Player4"};
 
         ArrayList<String> results = new ArrayList<String>(n);
         ArrayList<Thread> threads = new ArrayList<>(n);
@@ -37,7 +37,7 @@ public class GameManager {
             playerNumber = 0;
 
             // block till files are deleted by players (meaning they have taken their values)
-            waitForFileToNotExist("/home/lilwizzz/Desktop/optimizer");
+            //waitForFileToNotExist("/home/lilwizzz/Desktop/optimizer");
         }
 
         threads.forEach(t -> {

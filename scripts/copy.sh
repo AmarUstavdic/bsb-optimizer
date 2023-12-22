@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/lilwizzz/Desktop/batalja-bot/src"
+SOURCE_DIR="/home/lilwizzz/Desktop/bot/src"
 OPTIMIZER_DIR="/home/lilwizzz/Desktop/optimizer"
 BOT_DIR="$OPTIMIZER_DIR/bot"
 PLAYER_DIRS=("$OPTIMIZER_DIR/Player1" "$OPTIMIZER_DIR/Player2" "$OPTIMIZER_DIR/Player3" "$OPTIMIZER_DIR/Player4")

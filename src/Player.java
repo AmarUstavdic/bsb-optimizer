@@ -4,13 +4,13 @@ import java.io.IOException;
 
 public class Player {
 
-    private Stats stats;
+    private final Stats stats;
     private double[] genes;
     private double fitness;
 
-    public Player(double[] genes, Stats stats) {
+    public Player(double[] genes) {
         this.genes = genes;
-        this.stats = stats;
+        this.stats = new Stats();
     }
 
 
@@ -30,5 +30,9 @@ public class Player {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Stats getStats() {
+        return stats;
     }
 }
