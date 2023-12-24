@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ce8d671a-ee66-4afd-8afe-5da9850c3914" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/src/GeneticAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeneticAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +109,22 @@
       <option name="presentableId" value="Default" />
       <updated>1703201389161</updated>
       <workItem from="1703201390418" duration="27305000" />
+      <workItem from="1703458938357" duration="328000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

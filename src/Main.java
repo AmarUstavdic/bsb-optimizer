@@ -10,10 +10,11 @@ public class Main {
         int concurrentGames = 2;
         int populationSize = concurrentGames * 4;
         double mutationRate = 0.1;
+        double mutationStrength = 0.5;
         int generations = 50;
 
         GameManager gameManager = new GameManager();
-        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(populationSize, mutationRate);
+        GeneticAlgorithm geneticAlgorithm = new GeneticAlgorithm(populationSize, mutationRate, mutationStrength);
 
         // it is better to initialize weights and biases here
         // then we need to just write them to files before starting games (easy)

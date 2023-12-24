@@ -5,10 +5,12 @@ public class GeneticAlgorithm {
 
     private int populationSize;
     private double mutationRate;
+    private double mutationStrength;
 
-    public GeneticAlgorithm(int populationSize, double mutationRate) {
+    public GeneticAlgorithm(int populationSize, double mutationRate, double mutationStrength) {
         this.populationSize = populationSize;
         this.mutationRate = mutationRate;
+        this.mutationStrength = mutationStrength;
     }
 
     public Player[] initializePopulation(int genesLength) {
@@ -64,10 +66,17 @@ public class GeneticAlgorithm {
         for (Player player : population) {
             for (int i = 0; i < player.getGenes().length; i++) {
                 if (random.nextDouble() < mutationRate) {
-                    player.getGenes()[i] += random.nextGaussian(); // make sure this value is in bound [-2, 2]
+                    double mutation = random.nextGaussian() * mutationStrength;
+                    double newValue = player.getGenes()[i] + mutation;
+
+                    // Ensure the new value is within the range [-2, 2]
+                    newValue = Math.max(-2, Math.min(2, newValue));
+
+                    player.getGenes()[i] = newValue;
                 }
             }
         }
     }
+
 
 }
