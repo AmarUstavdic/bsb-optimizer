@@ -31,7 +31,7 @@ public class Player {
                 writer.write(", ");
             }
             writer.close();
-            System.out.println("data.csv file created and genes written to it");
+            //System.out.println("data.csv file created and genes written to it");
         } catch (IOException e) {
             e.printStackTrace();
         }

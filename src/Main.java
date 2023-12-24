@@ -7,6 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Player bestPlayer = null;
+
         int concurrentGames = 2;
         int populationSize = concurrentGames * 4;
         double mutationRate = 0.1;
@@ -25,7 +27,7 @@ public class Main {
         for (int i = 0; i < generations; i++) {
 
             ArrayList<String> results = gameManager.runGames(2, population);
-            results.forEach(System.out::println);
+            //results.forEach(System.out::println);
             // here we get game results
 
             // we need to parse those results to our population
@@ -108,18 +110,26 @@ public class Main {
             // then we perform selection of parents
             Player[] parents = geneticAlgorithm.selectParents(population);
 
+            // save the best player overall for reference
+            if (bestPlayer == null) bestPlayer = parents[0];
+            else {
+                if (bestPlayer.getFitness() < parents[0].getFitness()) {
+                    bestPlayer = parents[0];
+                    bestPlayer.writeGenesToFile("best.csv", "/home/lilwizzz/Desktop/optimizer");
+                    System.out.println("Best player fitness: " + bestPlayer.getFitness());
+                }
+            }
+
             // then we fill the rest of the population with offsprings
             Player[] offspring = geneticAlgorithm.crossover(parents);
 
             // here we perform mutation
             geneticAlgorithm.mutate(offspring);
 
-
             // and we replace old population with the new one
             System.arraycopy(offspring, 0, population, parents.length, offspring.length);
 
+            System.out.println("Iteration number [ " + i + " ] completed!");
         }
-
     }
-
 }

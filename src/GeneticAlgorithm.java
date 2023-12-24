@@ -46,7 +46,6 @@ public class GeneticAlgorithm {
 
 
 
-    // check if this is working correctly
     private Player crossoverIndividuals(Player parent1, Player parent2) {
         Player child = new Player(parent1.getGenes().length);
         Random random = new Random();
