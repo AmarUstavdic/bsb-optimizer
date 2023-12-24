@@ -13,6 +13,11 @@ public class Player {
         this.stats = new Stats();
     }
 
+    public Player(int genesLength) {
+        this.genes = new double[genesLength];
+        this.stats = new Stats();
+    }
+
 
     /**
      *  Creates new file every time and writes genes to it.
@@ -40,6 +45,10 @@ public class Player {
 
     public double getFitness() {
         return fitness;
+    }
+
+    public double[] getGenes() {
+        return genes;
     }
 
     public Stats getStats() {

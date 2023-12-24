@@ -43,14 +43,31 @@ public class GeneticAlgorithm {
     }
 
 
-    private Player crossoverIndividuals(Player parent1, Player parent2) {
 
-        return null;
+    // check if this is working correctly
+    private Player crossoverIndividuals(Player parent1, Player parent2) {
+        Player child = new Player(parent1.getGenes().length);
+        Random random = new Random();
+        int crossoverPoint = random.nextInt(parent1.getGenes().length);
+        for (int i = 0; i < crossoverPoint; i++) {
+            child.getGenes()[i] = parent1.getGenes()[i];
+        }
+        for (int i = crossoverPoint; i < parent2.getGenes().length; i++) {
+            child.getGenes()[i] = parent2.getGenes()[i];
+        }
+        return child;
     }
 
 
     public void mutate(Player[] population) {
-
+        Random random = new Random();
+        for (Player player : population) {
+            for (int i = 0; i < player.getGenes().length; i++) {
+                if (random.nextDouble() < mutationRate) {
+                    player.getGenes()[i] += random.nextGaussian(); // make sure this value is in bound [-2, 2]
+                }
+            }
+        }
     }
 
 }
